@@ -1,0 +1,17 @@
+{
+    "short_name": "Istighosah",
+    "name": "Istighosah Ponpes Darun Najah Al-Kubro",
+    "icon": [
+        {
+            "src": "logo.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "./index.html",
+    "background_color": "#f4f7f6",
+    "theme_color": "#1a5632",
+    "display": "standalone",
+    "orientation": "potrait"
+}
