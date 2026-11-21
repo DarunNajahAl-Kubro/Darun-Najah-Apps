@@ -1,60 +1,159 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Istighosah Ponpes Darun Najah Al-Kubro</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="apple-touch-icon" href="logo.png">
-  <meta name="theme-color" content="#1a5632">
-  <link rel="manifest" href="manifest.json">
-</head>
-<body>
-  <div id="app-container">
-    <img src="logo.png" class="watermark" alt="Watermark">
-    <div id="home-screen">
-      <div class="home-header">
-        <img src="logo.png" alt="Logo Lembaga" class="logo-home">
-        <div class="teks-homeHeader">
-          <h3>
-            Pondok Pesantren Darun Najah Al-Kubro
-          </h3>
-          <p>
-            Amaliyah Kemasyarakatan
-          </p>
-        </div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponpes Darun Najah Al-Kubro</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <img src="logo.png" id="logo">
+        <h1>Darun Najah Apps</h1>
+        <p>Panduan Amalan Santri & Alumni</p>
       </div>
-      
-      <div class="card-istighosah">
-        <h1 class="judul">
-          الإسْتغاثة
-        </h1>
-        <p class="subJudul">
-        للمعهد دارالنجاح الكبرى الإسلامى السلفى سمين كدي 
-        </p>
-        <button id="btn-istighosah">
-         Istighosah
-        </button>
-      </div>
-    </div>
-    <div id="istighosah-screen" class="hidden">
-      <header id="header-istighosah">
-        <img src="logo.png">
-        <h2>
-        الاستغاثة للمعهد دارالنجاح الكبرى
-        </h2>
-        <button id="btn-back">
-          Kembali
-        </button>
-      </header>
-      <div id="konten-istighosah">
-        
-      </div>
-    </div>
-  </div>
-  <footer id="penutup">©2026 Pondok Pesantren Darun Najah Al-Kubro | Istighosah | All Right Reserved | Design & Development By @Shaazzaash</footer>
-  <script src="data.js"></script>
-  <script src="script.js"></script>
-</body>
+      <button type="button" id="TombolTema">Mode Gelap</button>
+    </header>
+
+    <main>
+      <!-- KOLOM PENCARIAN -->
+      <section aria-label="Pencarian Amalan">
+        <input type="search" id="kolomCari" placeholder="Cari wirid, surat, maulid, atau Bilal.">
+      </section>
+
+      <!-- Wirid & Doa Jama'ah-->
+      <section class="kategori">
+        <h2>Wirid & Doa</h2>
+        <p>Amalan Rutin Setelah Sholat & Panduan Memimpin Doa Bersama.</p>
+        <ul>
+          <li>
+            <a href="bacaan/wirid.html">
+              <strong>Wirid Setelah Sholat</strong>
+              <span>Dzikir Dan Do'a Sholat Fardhu</span>
+            </a>
+          </li>
+          <li>
+            <a href="bacaan/istighosah.html">
+              <strong>Istighosah</strong>
+              <span>Bacaan Istighosah Ma'had Darun Najah</span>
+            </a>
+          </li>
+          <li>
+            <a href="bacaan/tahlil.html">
+              <strong>Tahlil</strong>
+              <span>Bacaan Tahlil Lengkap Ma'had Darun Najah</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Surat Pilihan -->
+      <section class="kategori">
+        <h2>Amalan Jum'at Pagi</h2>
+        <p>Surat Surat pilihan Amalan Jum'at Pagi PP Darun Najah</p>
+        <ul>
+          <li>
+            <a href="quran/yasin.html">
+              <strong>Surat Yassin</strong>
+            </a>
+          </li>
+          <li>
+            <a href="quran/ar-rahman.html">
+              <strong>Surat Ar-Rahman</strong>
+            </a>
+          </li>
+          <li>
+            <a href="quran/al-waqiah.html">
+              <strong>Surat Al-Waqi'ah</strong>
+            </a>
+          </li>
+          <li>
+            <a href="quran/al-kahfi.html">
+              <strong>Surat Al-Kahfi</strong>
+            </a>
+          </li>
+          <li>
+            <a href="quran/al-mulk.html">
+              <strong>Surat Al-Mulk</strong>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- MAULID -->
+      <section class="kategori">
+        <h2>Maulid Ad-Diba'i</h2>
+        <p>Bacaan Lengkap Maulid Ad-Diba'i</p>
+        <ul>
+          <li>
+            <a href="maulid/ad-diba.html">
+              <strong>Maulid Ad-Diba'i</strong>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Pembukaan Pidato & Bilal-->
+      <section class="kategori">
+        <h2>Kumpulan Pembukaan Pidato & Bilal</h2>
+        <p>Pembukaan Bahasa Indo, Arab, Inggris Dan Jawa. Serta Bilal 'iddaini dan bilal Jum'at</p>
+        <ul>
+          <li>
+            <a href="pidato/indo.html">
+              <strong>Pembukaan Pidato Bahasa Indonesia</strong>
+            </a>
+          </li>
+          <li>
+            <a href="pidato/arab.html">
+              <strong>Pembukaan Pidato Bahasa Arab</strong>
+            </a>
+          </li>
+          <li>
+            <a href="pidato/inggris.html">
+              <strong>Pembukaan Pidato Bahasa Inggris</strong>
+            </a>
+          </li>
+          <li>
+            <a href="pidato/jawa.html">
+              <strong>Pembukaan Pidato Bahasa Jawa</strong>
+            </a>
+          </li>
+          <li>
+            <a href="bilal/jumat.html">
+              <strong>Bilal Jum'at</strong>
+            </a>
+          </li>
+          <li>
+            <a href="bilal/idul-adha.html">
+              <strong>Bilal Idul Adha</strong>
+            </a>
+          </li>
+          <li>
+            <a href="bilal/idul-fitri.html">
+              <strong>Bilal Idul Fitri</strong>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- PESAN PENCARIAN KOSONG -->
+      <p id="pesanKosong" hidden>
+        <strong>
+          Bacaan Yang Dicari Belum Tersedia!!
+        </strong> <br>
+        Beri Saran Ke Admin..
+      </p>
+    </main>
+    <footer>
+      <p>Yayasan Darun Najah Al-Kubro | Tegalsari, Semen, Kediri</p>
+      <p>&copy; 2026 All Rights Reserved.</p>
+      <p>
+        <span>Link Web PPDN (Profil, Pendaftaran Dll).</span><br>
+        <a href="https://darunnajahal-kubro.github.io/" target="_blank">PP Darun Najah Al-Kubro</a>
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
