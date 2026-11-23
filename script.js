@@ -160,6 +160,41 @@ if (kolomCari && hasilCariBox) {
 // ==========================================
 // 5. TANGGAL & JADWAL SHOLAT KUBAH HEADER
 // ==========================================
+function ambilTanggalHijriah(tanggal) {
+  const bulanHijriah = [
+    "Muharram",
+    "Safar",
+    "Rabiul Awal",
+    "Rabiul Akhir",
+    "Jumadil Awal",
+    "Jumadil Akhir",
+    "Rajab",
+    "Sya'ban",
+    "Ramadhan",
+    "Syawal",
+    "Dzulkaidah",
+    "Dzulhijjah"
+  ];
+
+  try {
+    const bagian = new Intl.DateTimeFormat("en-u-ca-islamic-umalqura", {
+      day: "numeric",
+      month: "numeric",
+      year: "numeric"
+    }).formatToParts(tanggal);
+
+    const hari = bagian.find((b) => b.type === "day")?.value;
+    const indeksBulan = parseInt(bagian.find((b) => b.type === "month")?.value, 10) - 1;
+    const tahun = bagian.find((b) => b.type === "year")?.value;
+
+    if (hari && bulanHijriah[indeksBulan] && tahun) {
+      return `${hari} ${bulanHijriah[indeksBulan]} ${tahun} H`;
+    }
+  } catch (e) {}
+
+  return "1448 H";
+}
+
 function perbaruiTanggalDanSholat() {
   const elTanggal = document.getElementById("tanggal-lengkap");
   const elSholat = document.getElementById("sholat-berikutnya");
@@ -173,15 +208,7 @@ function perbaruiTanggalDanSholat() {
     year: "numeric"
   });
 
-  let tglHijriah = "1448 H";
-  try {
-    tglHijriah = new Intl.DateTimeFormat("id-ID-u-ca-islamic", {
-      day: "numeric",
-      month: "long",
-      year: "numeric"
-    }).format(sekarang);
-  } catch (e) {}
-
+  const tglHijriah = ambilTanggalHijriah(sekarang);
   elTanggal.textContent = `${tglMasehi} / ${tglHijriah}`;
 
   const jadwalKediri = [
