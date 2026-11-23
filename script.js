@@ -252,7 +252,7 @@ function kirimDataPendaftaran(event) {
   antrean.push(dataCalonSantri);
   localStorage.setItem("database_calon_santri", JSON.stringify(antrean));
 
-  const nomorAdmin = "6281234567890"; // Ganti dengan nomor WA admin pendaftaran pondok
+  const nomorAdmin = "6287712151351"; 
   const pesanWA = `Assalamu'alaikum Admin PSB *PP Darun Najah Al-Kubro*,
 Saya telah mengisi formulir pendaftaran online:
 

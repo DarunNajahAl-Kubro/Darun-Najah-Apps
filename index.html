@@ -143,7 +143,7 @@
                     <article class="headline-card" onclick="bukaLayar('galeri-screen')">
                         <div class="headline-text">
                             <span class="tag-pill tag-galeri">Galeri</span>
-                            <h4>Dokumentasi Kajian Kitab Kuning, Majelis & Aktivitas Santri</h4>
+                            <h4>Kenangan Dan Dokumentasi Kegiatan</h4>
                         </div>
                         <div class="headline-thumb thumb-icon">🖼️</div>
                     </article>
@@ -184,33 +184,163 @@
         </div>
 
         <!-- ==========================================
-             3. HALAMAN PROFIL PONDOK
+             3. HALAMAN PROFIL PONDOK (HTML MURNI)
         =========================================== -->
         <div id="profil-screen" class="sub-screen" style="display: none;">
             <div class="nav-bacaan">
                 <button type="button" class="tombol-kembali btn-nav-plain" onclick="bukaLayar('home-screen')">← Beranda</button>
                 <span style="color: var(--primary-soft); font-weight: 700; font-size: 0.92rem;">Profil Pondok</span>
             </div>
+
             <div class="sub-content">
+                <!-- 1. IDENTITAS & SEJARAH SINGKAT -->
                 <div class="blok-bacaan">
-                    <span class="petunjuk">Tentang Lembaga</span>
-                    <h3 style="margin-bottom: 8px;">Pondok Pesantren Darun Najah Al-Kubro</h3>
-                    <p style="font-size: 0.9rem; color: var(--muted);">Berlokasi di Tegalsari, Kec. Semen, Kab. Kediri, Jawa Timur. Memadukan tradisi kajian kitab kuning khas pesantren salaf (Al-Islami As-Salafi) dengan pendidikan formal.</p>
+                    <span class="petunjuk">Identitas & Sejarah</span>
+                    <h3 style="font-size: 1.05rem; margin-bottom: 8px; color: var(--text);">Pondok Pesantren Darun Najah Al-Kubro</h3>
+                    <p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 10px;">
+                        Pondok Pesantren Darun Najah Al-Kubro merupakan lembaga pendidikan Islam yang berlokasi di Tegalsari, Kecamatan Semen, Kabupaten Kediri, Jawa Timur. Pesantren ini hadir sebagai pusat pembinaan keilmuan dan akhlak yang memadukan tradisi kajian kitab kuning khas pesantren salaf dengan sistem pendidikan formal yang terstruktur.
+                    </p>
+                    <p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 10px;">
+                        Sejak awal dirintis, Darun Najah Al-Kubro berkomitmen mencetak generasi santri yang <em>tafaqquh fiddin</em>, berakhlakul karimah, serta siap berkhidmat di tengah masyarakat tanpa meninggalkan nilai-nilai luhur kepesantrenan.
+                    </p>
+                    <p style="font-size: 0.88rem; color: var(--muted);">
+                        Selain menjadi rumah belajar bagi para santri mukim maupun non-mukim, pesantren ini juga aktif menghidupkan tradisi amaliyah kemasyarakatan, seperti majelis istighosah rutin dan pengajian bersama. sebagai sarana mempererat silaturahmi antara pesantren, alumni, dan warga sekitar.
+                    </p>
                 </div>
+
+                <!-- 2. VISI & MISI -->
                 <div class="blok-bacaan">
-                    <span class="petunjuk">Tokoh & Pengasuh</span>
-                    <p style="font-size: 0.92rem; font-weight: 600;">HM. Turmudzi Abror</p>
-                    <p style="font-size: 0.84rem; color: var(--muted);">Direktur Pendidikan / Pimpinan</p>
-                </div>
-                <div class="blok-bacaan">
-                    <span class="petunjuk">Unit Pendidikan</span>
-                    <ul class="clean-bullet">
-                        <li>Kepesantrenan (Asrama Santri Putra & Putri)</li>
-                        <li>Madrasah Diniyah & Kajian Kitab Kuning</li>
-                        <li>Madrasah Aliyah (MA) Darun Najah</li>
+                    <span class="petunjuk">Visi & Misi</span>
+                    <p style="font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 8px;">
+                        "Terwujudnya generasi santri yang berilmu amaliyah, beramal ilmiyah, berakhlakul karimah, dan berhaluan Ahlussunnah wal Jama'ah."
+                    </p>
+                    <ul class="clean-bullet" style="display: flex; flex-direction: column; gap: 6px;">
+                        <li>Menyelenggarakan pengajian kitab kuning dan pendalaman ilmu syariat secara berjenjang.</li>
+                        <li>Mengintegrasikan pendidikan kepesantrenan salaf dengan pendidikan formal yang adaptif.</li>
+                        <li>Membiasakan amaliyah dzikir, istighosah, dan khidmah kemasyarakatan.</li>
                     </ul>
                 </div>
-                <a href="https://darunnajahal-kubro.github.io/" target="_blank" class="btn-utama-link">Buka Website Resmi PPDN →</a>
+
+                <!-- 3. TOKOH (CARA TAMBAH: Copy-paste satu kotak <div style="..."> di bawah ini) -->
+                <div class="blok-bacaan">
+                    <span class="petunjuk">Pengasuh & Jajaran Pengurus</span>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 10px 12px; border-radius: 8px;">
+                            <strong style="display: block; font-size: 0.92rem; color: var(--text);">Drs. KH. Turmudzi Abror, M.Pd.</strong>
+                            <span style="font-size: 0.8rem; color: var(--muted);">Pendiri & Pengasuh</span>
+                        </div>
+
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 10px 12px; border-radius: 8px;">
+                            <strong style="display: block; font-size: 0.92rem; color: var(--text);">Ust. Nur Hidayat, M.Pd.</strong>
+                            <span style="font-size: 0.8rem; color: var(--muted);">Penasihat & Kepala Sekolah MTs Terpadu Darun Najah</span>
+                        </div>
+
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 10px 12px; border-radius: 8px;">
+                            <strong style="display: block; font-size: 0.92rem; color: var(--text);">Ust. Bahrul Ulum</strong>
+                            <span style="font-size: 0.8rem; color: var(--muted);">Kepala Sekolah SDI Plus Darun Najah</span>
+                        </div>
+
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 10px 12px; border-radius: 8px;">
+                            <strong style="display: block; font-size: 0.92rem; color: var(--text);">Ustdzh. Alif Nur Hasanah, S.Th.I.</strong>
+                            <span style="font-size: 0.8rem; color: var(--muted);">Kepala Sekolah MA Darun Najah</span>
+                        </div>
+
+                       <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 10px 12px; border-radius: 8px;">
+                            <strong style="display: block; font-size: 0.92rem; color: var(--text);">Ust. Kahfi Irham Pratama</strong>
+                            <span style="font-size: 0.8rem; color: var(--muted);">Ketua Pondok</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. UNIT PENDIDIKAN -->
+                <div class="blok-bacaan">
+                    <span class="petunjuk">Unit</span>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 9px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;">
+                            Pondok Pesantren Darun Najah Al-Kubro
+                        </div>
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 9px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;">
+                            Madrasah Diniyah Ula Al-Badriyah
+                        </div>
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 9px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;">
+                            Madrasah Diniyah Wustho Al-Badriyah
+                        </div>
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 9px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;">
+                            Madrasah Diniyah 'Ulya Al-Badriyah
+                        </div>
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 9px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;">
+                            TPQ Al-Azhar
+                        </div>
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 9px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;">
+                            SDI Plus Darun Najah
+                        </div>
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 9px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;">
+                            MTs Terpadu Darun Najah
+                        </div>
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 9px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;">
+                            MA Darun Najah
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blok-bacaan">
+                    <span class="petunjuk">Progam</span>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 9px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;">
+                            Kajian Kitab Kuning (Bandongan/Sorogan)
+                        </div>
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 9px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;">
+                            Sekolah Formal & Diniyah
+                        </div>
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 9px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;">
+                            Tahfidz Jus 30
+                        </div>
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 9px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;">
+                            Tahfidz Lanjutan
+                        </div>
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 9px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;">
+                            Pembacaan Maulid Ad-Diba'i
+                        </div>
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 9px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;">
+                            Pidato 4 Bahasa
+                        </div>
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 9px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;">
+                            Pelatihan Bilal Dan Khutbah
+                        </div>
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 9px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;">
+                            Musyawarah Kitab (Syawir)
+                        </div>
+                        <div style="background: var(--soft); border-left: 3px solid var(--primary); padding: 9px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;">
+                            Khataman Qur'an Minggu Pon
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. LOKASI & KANAL RESMI -->
+                <div class="blok-bacaan">
+                    <span class="petunjuk">Lokasi & Kanal Resmi</span>
+                    <p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 12px;">
+                        📍 Dusun Tegalsari, Desa/Kec. Semen, Kabupaten Kediri, Jawa Timur.
+                    </p>
+
+                    <a href="https://maps.google.com/?q=Pondok+Pesantren+Darun+Najah+Semen+Kediri" target="_blank" class="btn-utama-link" style="margin-bottom: 8px;">
+                        📍 Buka Lokasi di Google Maps →
+                    </a>
+
+                    <a href="https://darunnajahal-kubro.github.io/" target="_blank" class="btn-utama-link" style="background: var(--soft); color: var(--text); border: 1px solid var(--border); margin-bottom: 8px;">
+                        🌐 Kunjungi Web Utama PPDN →
+                    </a>
+
+                    <!-- Tombol Instagram & TikTok (2 Kolom) -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                        <a href="https://instagram.com/ponpesdarunnajah_semen" target="_blank" class="btn-utama-link" style="margin-top: 0; background: var(--primary-soft); color: var(--text); border: 1px solid var(--border); font-size: 0.82rem;">
+                            📸 Instagram
+                        </a>
+                        <a href="https://tiktok.com/@darunnajah_alkubro" target="_blank" class="btn-utama-link" style="margin-top: 0; background: var(--primary-soft); color: var(--text); border: 1px solid var(--border); font-size: 0.82rem;">
+                            🎵 TikTok
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -224,10 +354,22 @@
             </div>
             <div class="sub-content">
                 <div class="galeri-grid">
-                    <div class="galeri-placeholder">🕌<span>Majelis Istighosah Rutin</span></div>
-                    <div class="galeri-placeholder">📚<span>Kajian Kitab Kuning</span></div>
-                    <div class="galeri-placeholder">🎓<span>Kegiatan Madrasah</span></div>
-                    <div class="galeri-placeholder">🤝<span>Khidmah & Bakti Sosial</span></div>
+                    <div class="galeri-card">
+                        <img src="guruFormal.jpeg" alt="FotoGuru" class="fotoGaleri">
+                        <span>Para Guru Sekolah Formal</span>
+                    </div>
+                    <div class="galeri-card">
+                        <img src="ziaroh.png" alt="ziarohWali" class="fotoGaleri">
+                        <span>Ziaroh Wali 5</span>
+                    </div>
+                    <div class="galeri-card">
+                        <img src="upacara.jpg" alt="fotoUpacara" class="fotoGaleri">
+                        <span>Upacara 17 Agustus</span>
+                    </div>
+                    <div class="galeri-card">
+                        <img src="4.png" alt="fotoHaflah" class="fotoGaleri">
+                        <span>Haflah Akhirussanah</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -244,7 +386,7 @@
                 <div class="blok-bacaan">
                     <span class="petunjuk">Integrasi Sistem Data Pondok</span>
                     <h3 style="margin-bottom: 6px;">Formulir Data Awal Calon Santri</h3>
-                    <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 14px;">Biodata yang diisi di sini otomatis masuk ke antrean database calon santri pada Aplikasi Data Pondok dan diteruskan ke WhatsApp panitia.</p>
+                    <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 14px;">Biodata yang diisi di sini otomatis masuk ke antrean database calon santri pada Aplikasi Data Pondok dan diteruskan ke WhatsApp Divisi Humas.</p>
 
                     <form id="form-psb" class="form-psb" onsubmit="kirimDataPendaftaran(event)">
                         <div class="form-group">
@@ -278,12 +420,12 @@
                             <input type="text" id="psb-alamat" required placeholder="Contoh: Semen, Kab. Kediri">
                         </div>
                         <div class="form-group">
-                            <label>Pilihan Program *</label>
+                            <label>Pilihan Unit/Jenjang *</label>
                             <select id="psb-program" required>
-                                <option value="">-- Pilih Jenjang / Mukim --</option>
-                                <option value="Mukim + MA Darun Najah">Mukim Pondok + MA Darun Najah</option>
-                                <option value="Mukim + Madrasah Diniyah">Mukim Pondok + Madrasah Diniyah</option>
-                                <option value="Non-Mukim (Formal Saja)">Non-Mukim (Sekolah Formal Saja)</option>
+                                <option value="">-- Pilih unit / Jenjang --</option>
+                                <option value="Mukim + MA Darun Najah">Pondok Pesantren + Sekolah Formal</option>
+                                <option value="Mukim + Madrasah Diniyah">Hanya Pondok Pesantren</option>
+                                <option value="Non-Mukim (Formal Saja)">Hanya Sekolah Formal</option>
                             </select>
                         </div>
                         <div class="form-group">
