@@ -573,11 +573,11 @@ footer {
 
 footer p {
   margin-bottom: 5px;
-  color: var(--primary-soft);
+  color: #E6F2EC;
 }
 
 footer a {
-  color: var(--primary-soft);
+  color: #E6F2EC;
   font-weight: 700;
   text-decoration: none;
 }
