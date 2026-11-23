@@ -1,178 +1,307 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ponpes Darun Najah Al-Kubro</title>
+    <title>Darun Najah Apps — Panduan Amalan Santri & Alumni</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
-    <link name="theme-color" content="#1B4332">
+    <meta name="theme-color" content="#145335">
     <link rel="manifest" href="manifest.json">
-  </head>
+</head>
+<body>
+    <div id="app-container">
+        <img src="logo.png" alt="Watermark" class="watermark">
 
-  <body>
-    <header>
-      <div>
-        <img src="logo.png" id="logo">
-        <h1>Darun Najah Apps</h1>
-        <p>Panduan Amalan Santri & Alumni</p>
-      </div>
-      <button type="button" id="TombolTema">Mode Gelap</button>
-    </header>
+        <!-- ==========================================
+             1. HALAMAN BERANDA (INDEX.HTML)
+        =========================================== -->
+        <div id="home-screen">
+            <!-- Header Hijau + Kubah Masjid -->
+            <header class="dome-header">
+                <div class="dome-pattern"></div>
 
-    <main>
-      <img src="logo.png" alt="Watermark" class="watermark">
-      <!-- KOLOM PENCARIAN -->
-      <section aria-label="Pencarian Amalan">
-        <input type="search" id="kolomCari" placeholder="Cari wirid, surat, maulid, atau Bilal.">
-      </section>
+                <svg class="dome-svg" viewBox="0 0 480 260" preserveAspectRatio="none">
+                    <path d="M 240,10 
+                             C 258,38 362,62 366,130 
+                             C 368,154 356,168 348,178 
+                             C 392,180 420,196 430,218 
+                             L 480,218 L 480,260 L 0,260 L 0,218 L 50,218 
+                             C 60,196 88,180 132,178 
+                             C 124,168 112,154 114,130 
+                             C 118,62 222,38 240,10 Z" 
+                          fill="var(--surface)"/>
+                </svg>
 
-      <!-- Wirid & Doa Jama'ah-->
-      <section class="kategori">
-        <h2>Wirid & Doa</h2>
-        <p>Amalan Rutin Setelah Sholat & Panduan Memimpin Doa Bersama.</p>
-        <ul>
-          <li>
-            <a href="bacaan/wirid.html">
-              <strong>Wirid Setelah Sholat</strong>
-              <span>Dzikir Dan Do'a Sholat Fardhu</span>
-              <p class="peringatan">(⚠️ Dalam Pengembangan ⚠️)</p>
-            </a>
-          </li>
-          <li>
-            <a href="bacaan/istighosah.html">
-              <strong>Istighosah</strong>
-              <span>Bacaan Istighosah Ma'had Darun Najah</span>
-            </a>
-          </li>
-          <li>
-            <a href="bacaan/tahlil.html">
-              <strong>Tahlil</strong>
-              <span>Bacaan Tahlil Lengkap Ma'had Darun Najah</span>
-            </a>
-          </li>
-        </ul>
-      </section>
+                <div class="dome-info">
+                    <div class="brand-row">
+                        <img src="logo.png" alt="Logo Darun Najah" id="logo" class="dome-logo">
+                        <span class="brand-title">Pondok Pesantren<br>Darun Najah Al-Kubro</span>
+                    </div>
 
-      <!-- Surat Pilihan -->
-      <section class="kategori">
-        <h2>Amalan Jum'at Pagi</h2>
-        <p>Surat Surat pilihan Amalan Jum'at Pagi PP Darun Najah</p>
-        <ul>
-          <li>
-            <a href="quran/yasin.html">
-              <strong>Surah Yasin</strong>
-              <p class="peringatan">(⚠️ Dalam Pengembangan ⚠️)</p>
-            </a>
-          </li>
-          <li>
-            <a href="quran/ar-rahman.html">
-              <strong>Surah Ar-Rahman</strong>
-              <p class="peringatan">(⚠️ Dalam Pengembangan ⚠️)</p>
-            </a>
-          </li>
-          <li>
-            <a href="quran/al-waqiah.html">
-              <strong>Surah Al-Waqi'ah</strong>
-              <p class="peringatan">(⚠️ Dalam Pengembangan ⚠️)</p>
-            </a>
-          </li>
-          <li>
-            <a href="quran/al-kahfi.html">
-              <strong>Surah Al-Kahfi</strong>
-              <p class="peringatan">(⚠️ Dalam Pengembangan ⚠️)</p>
-            </a>
-          </li>
-          <li>
-            <a href="quran/al-mulk.html">
-              <strong>Surah Al-Mulk</strong>
-              <p class="peringatan">(⚠️ Dalam Pengembangan ⚠️)</p>
-            </a>
-          </li>
-        </ul>
-      </section>
+                    <p class="lokasi-text">📍 Tegalsari, Kec. Semen, Kediri</p>
 
-      <!-- MAULID -->
-      <section class="kategori">
-        <h2>Maulid</h2>
-        <p>Kumpulan Teks Maulid</p>
-        <ul>
-          <li>
-            <a href="maulid/ad-diba.html">
-              <strong>Maulid Ad-Diba'i</strong>
-              <p class="peringatan">(⚠️ Dalam Pengembangan ⚠️)</p>
-            </a>
-          </li>
-        </ul>
-      </section>
+                    <div class="waktu-sholat-box">
+                        <h2 id="sholat-berikutnya">Subuh 03:40 <small>WIB</small></h2>
+                        <span id="hitung-mundur" class="countdown-text">- 00 : 00 : 00</span>
+                    </div>
 
-      <!-- Pembukaan Pidato & Bilal-->
-      <section class="kategori">
-        <h2>Kumpulan Pembukaan Pidato & Bilal</h2>
-        <p>Pembukaan Bahasa Indo, Arab, Inggris Dan Jawa. Serta Bilal 'iddaini dan bilal Jum'at</p>
-        <ul>
-          <li>
-            <a href="pidato/indo.html">
-              <strong>Pembukaan Pidato Bahasa Indonesia</strong>
-              <p class="peringatan">(⚠️ Dalam Pengembangan ⚠️)</p>
-            </a>
-          </li>
-          <li>
-            <a href="pidato/arab.html">
-              <strong>Pembukaan Pidato Bahasa Arab</strong>
-              <p class="peringatan">(⚠️ Dalam Pengembangan ⚠️)</p>
-            </a>
-          </li>
-          <li>
-            <a href="pidato/inggris.html">
-              <strong>Pembukaan Pidato Bahasa Inggris</strong>
-              <p class="peringatan">(⚠️ Dalam Pengembangan ⚠️)</p>
-            </a>
-          </li>
-          <li>
-            <a href="pidato/jawa.html">
-              <strong>Pembukaan Pidato Bahasa Jawa</strong>
-              <p class="peringatan">(⚠️ Dalam Pengembangan ⚠️)</p>
-            </a>
-          </li>
-          <li>
-            <a href="bilal/jumat.html">
-              <strong>Bilal Jum'at</strong>
-              <p class="peringatan">(⚠️ Dalam Pengembangan ⚠️)</p>
-            </a>
-          </li>
-          <li>
-            <a href="bilal/idul-adha.html">
-              <strong>Bilal Idul Adha</strong>
-              <p class="peringatan">(⚠️ Dalam Pengembangan ⚠️)</p>
-            </a>
-          </li>
-          <li>
-            <a href="bilal/idul-fitri.html">
-              <strong>Bilal Idul Fitri</strong>
-              <p class="peringatan">(⚠️ Dalam Pengembangan ⚠️)</p>
-            </a>
-          </li>
-        </ul>
-      </section>
+                    <p id="tanggal-lengkap" class="tanggal-text">Memuat tanggal...</p>
+                </div>
+            </header>
 
-      <!-- PESAN PENCARIAN KOSONG -->
-      <p id="pesanKosong" hidden>
-        <strong>
-          Bacaan Yang Dicari Belum Tersedia!!
-        </strong> <br>
-        Beri Saran Ke Admin..
-      </p>
-    </main>
-    <footer>
-      <p>Yayasan Darun Najah Al-Kubro | Tegalsari, Semen, Kediri</p>
-      <p>&copy; 2026 All Rights Reserved.</p>
-      <p>
-        <span>Link Web PPDN (Profil, Pendaftaran Dll).</span><br>
-        <a href="https://darunnajahal-kubro.github.io/" target="_blank">PP Darun Najah Al-Kubro</a>
-      </p>
-    </footer>
+            <!-- Grid 8 Ikon Menu Utama -->
+            <section class="menu-grid-section">
+                <div class="menu-grid-8" id="grid-menu-utama">
+                    <!-- 1. Istighosah (Langsung ke file GitHub) -->
+                    <a href="bacaan/istighosah.html" class="icon-menu-item">
+                        <div class="icon-box bg-emerald">📿</div>
+                        <span>Istighosah</span>
+                    </a>
+
+                    <!-- 2. Tahlil (Langsung ke file GitHub) -->
+                    <a href="bacaan/tahlil.html" class="icon-menu-item">
+                        <div class="icon-box bg-teal">🤲</div>
+                        <span>Tahlil</span>
+                    </a>
+
+                    <!-- 3. Wirid Sholat (Langsung ke file GitHub) -->
+                    <a href="bacaan/wirid.html" class="icon-menu-item">
+                        <div class="icon-box bg-amber">🕌</div>
+                        <span>Wirid Sholat</span>
+                    </a>
+
+                    <!-- 4. Amalan Jum'at (Buka daftar 5 surah di folder quran/) -->
+                    <button type="button" class="icon-menu-item" onclick="bukaSubMenu('jumat')">
+                        <div class="icon-box bg-green">📖</div>
+                        <span>Amalan Jum'at</span>
+                    </button>
+
+                    <!-- 5. Maulid (Langsung ke maulid/ad-diba.html) -->
+                    <a href="maulid/ad-diba.html" class="icon-menu-item">
+                        <div class="icon-box bg-rose">📗</div>
+                        <span>Maulid Diba'</span>
+                    </a>
+
+                    <!-- 6. Pidato (Buka daftar 4 bahasa di folder pidato/) -->
+                    <button type="button" class="icon-menu-item" onclick="bukaSubMenu('pidato')">
+                        <div class="icon-box bg-blue">🎙️</div>
+                        <span>Pidato</span>
+                    </button>
+
+                    <!-- 7. Teks Bilal (Buka daftar 3 bilal di folder bilal/) -->
+                    <button type="button" class="icon-menu-item" onclick="bukaSubMenu('bilal')">
+                        <div class="icon-box bg-indigo">📢</div>
+                        <span>Teks Bilal</span>
+                    </button>
+
+                    <!-- 8. Mode Gelap (Sinkron dengan semua halaman bacaan) -->
+                    <button type="button" id="TombolTema" class="icon-menu-item">
+                        <div class="icon-box bg-slate">🌓</div>
+                        <span id="teksTema">Mode Gelap</span>
+                    </button>
+                </div>
+
+                <!-- Kolom Pencarian di Bawah Menu -->
+                <div class="search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="search" id="kolomCari" placeholder="Cari wirid, surat, maulid, pidato, atau Bilal...">
+                </div>
+
+                <!-- Hasil Pencarian Langsung ke File GitHub (Muncul saat mengetik) -->
+                <div id="hasilCariBox" class="hasil-cari-box" hidden>
+                    <ul id="daftarHasilCari" class="link-list-card"></ul>
+                    <p id="pesanKosong" hidden>
+                        <strong>Bacaan Yang Dicari Belum Tersedia!!</strong><br>
+                        Beri Saran Ke Admin..
+                    </p>
+                </div>
+            </section>
+
+            <!-- Bagian Artikel Bawah: Seputar Pondok -->
+            <section class="headline-section">
+                <div class="headline-header">
+                    <div class="headline-title">
+                        <span class="accent-bar"></span>
+                        <h3>Seputar Pondok</h3>
+                    </div>
+                    <a href="https://darunnajahal-kubro.github.io/" target="_blank" class="link-web-kecil">Web PPDN ›</a>
+                </div>
+
+                <div class="headline-list">
+                    <!-- Artikel 1: Profil Pondok -->
+                    <article class="headline-card" onclick="bukaLayar('profil-screen')">
+                        <div class="headline-text">
+                            <span class="tag-pill tag-profil">Profil Pondok</span>
+                            <h4>Mengenal Pondok Pesantren Darun Najah Al-Kubro Tegalsari Semen</h4>
+                        </div>
+                        <img src="logo.png" alt="Profil Darun Najah" class="headline-thumb thumb-logo">
+                    </article>
+
+                    <!-- Artikel 2: Galeri -->
+                    <article class="headline-card" onclick="bukaLayar('galeri-screen')">
+                        <div class="headline-text">
+                            <span class="tag-pill tag-galeri">Galeri</span>
+                            <h4>Dokumentasi Kajian Kitab Kuning, Majelis & Aktivitas Santri</h4>
+                        </div>
+                        <div class="headline-thumb thumb-icon">🖼️</div>
+                    </article>
+
+                    <!-- Artikel 3: Link Pendaftaran (Siap Terhubung ke Aplikasi Data Pondok) -->
+                    <article class="headline-card" onclick="bukaLayar('pendaftaran-screen')">
+                        <div class="headline-text">
+                            <span class="tag-pill tag-daftar">Pendaftaran PSB</span>
+                            <h4>Formulir Santri Baru — Data Langsung Terhubung ke Sistem Pondok</h4>
+                        </div>
+                        <div class="headline-thumb thumb-icon-green">📝</div>
+                    </article>
+                </div>
+            </section>
+
+            <footer>
+                <p>Yayasan Darun Najah Al-Kubro | Tegalsari, Semen, Kediri</p>
+                <p>&copy; 2026 All Rights Reserved.</p>
+                <p>
+                    <span>Link Web PPDN (Profil, Pendaftaran Dll).</span><br>
+                    <a href="https://darunnajahal-kubro.github.io/" target="_blank">PP Darun Najah Al-Kubro</a>
+                </p>
+            </footer>
+        </div>
+
+        <!-- ==========================================
+             2. SUB-MENU PILIHAN (AMALAN JUM'AT / PIDATO / BILAL)
+        =========================================== -->
+        <div id="submenu-screen" class="sub-screen" style="display: none;">
+            <div class="nav-bacaan">
+                <button type="button" class="tombol-kembali btn-nav-plain" onclick="bukaLayar('home-screen')">← Beranda</button>
+                <span id="judul-submenu" style="color: var(--primary-soft); font-weight: 700; font-size: 0.92rem;">Daftar Bacaan</span>
+            </div>
+            <div class="sub-content">
+                <p id="desk-submenu" class="sub-desc"></p>
+                <ul id="list-submenu" class="link-list-card"></ul>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             3. HALAMAN PROFIL PONDOK
+        =========================================== -->
+        <div id="profil-screen" class="sub-screen" style="display: none;">
+            <div class="nav-bacaan">
+                <button type="button" class="tombol-kembali btn-nav-plain" onclick="bukaLayar('home-screen')">← Beranda</button>
+                <span style="color: var(--primary-soft); font-weight: 700; font-size: 0.92rem;">Profil Pondok</span>
+            </div>
+            <div class="sub-content">
+                <div class="blok-bacaan">
+                    <span class="petunjuk">Tentang Lembaga</span>
+                    <h3 style="margin-bottom: 8px;">Pondok Pesantren Darun Najah Al-Kubro</h3>
+                    <p style="font-size: 0.9rem; color: var(--muted);">Berlokasi di Tegalsari, Kec. Semen, Kab. Kediri, Jawa Timur. Memadukan tradisi kajian kitab kuning khas pesantren salaf (Al-Islami As-Salafi) dengan pendidikan formal.</p>
+                </div>
+                <div class="blok-bacaan">
+                    <span class="petunjuk">Tokoh & Pengasuh</span>
+                    <p style="font-size: 0.92rem; font-weight: 600;">HM. Turmudzi Abror</p>
+                    <p style="font-size: 0.84rem; color: var(--muted);">Direktur Pendidikan / Pimpinan</p>
+                </div>
+                <div class="blok-bacaan">
+                    <span class="petunjuk">Unit Pendidikan</span>
+                    <ul class="clean-bullet">
+                        <li>Kepesantrenan (Asrama Santri Putra & Putri)</li>
+                        <li>Madrasah Diniyah & Kajian Kitab Kuning</li>
+                        <li>Madrasah Aliyah (MA) Darun Najah</li>
+                    </ul>
+                </div>
+                <a href="https://darunnajahal-kubro.github.io/" target="_blank" class="btn-utama-link">Buka Website Resmi PPDN →</a>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             4. HALAMAN GALERI PONDOK
+        =========================================== -->
+        <div id="galeri-screen" class="sub-screen" style="display: none;">
+            <div class="nav-bacaan">
+                <button type="button" class="tombol-kembali btn-nav-plain" onclick="bukaLayar('home-screen')">← Beranda</button>
+                <span style="color: var(--primary-soft); font-weight: 700; font-size: 0.92rem;">Galeri Kegiatan</span>
+            </div>
+            <div class="sub-content">
+                <div class="galeri-grid">
+                    <div class="galeri-placeholder">🕌<span>Majelis Istighosah Rutin</span></div>
+                    <div class="galeri-placeholder">📚<span>Kajian Kitab Kuning</span></div>
+                    <div class="galeri-placeholder">🎓<span>Kegiatan Madrasah</span></div>
+                    <div class="galeri-placeholder">🤝<span>Khidmah & Bakti Sosial</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             5. HALAMAN PENDAFTARAN (TERINTEGRASI KE DATA PONDOK)
+        =========================================== -->
+        <div id="pendaftaran-screen" class="sub-screen" style="display: none;">
+            <div class="nav-bacaan">
+                <button type="button" class="tombol-kembali btn-nav-plain" onclick="bukaLayar('home-screen')">← Beranda</button>
+                <span style="color: var(--primary-soft); font-weight: 700; font-size: 0.92rem;">Pendaftaran PSB</span>
+            </div>
+            <div class="sub-content">
+                <div class="blok-bacaan">
+                    <span class="petunjuk">Integrasi Sistem Data Pondok</span>
+                    <h3 style="margin-bottom: 6px;">Formulir Data Awal Calon Santri</h3>
+                    <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 14px;">Biodata yang diisi di sini otomatis masuk ke antrean database calon santri pada Aplikasi Data Pondok dan diteruskan ke WhatsApp panitia.</p>
+
+                    <form id="form-psb" class="form-psb" onsubmit="kirimDataPendaftaran(event)">
+                        <div class="form-group">
+                            <label>Nama Lengkap Calon Santri *</label>
+                            <input type="text" id="psb-nama" required placeholder="Sesuai Ijazah / Akta">
+                        </div>
+                        <div class="form-group">
+                            <label>NIK / NISN *</label>
+                            <input type="number" id="psb-nik" required placeholder="16 digit NIK atau 10 digit NISN">
+                        </div>
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label>Jenis Kelamin *</label>
+                                <select id="psb-jk" required>
+                                    <option value="">Pilih</option>
+                                    <option value="Laki-laki">Putra</option>
+                                    <option value="Perempuan">Putri</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Tanggal Lahir *</label>
+                                <input type="date" id="psb-tgl" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Asal Sekolah *</label>
+                            <input type="text" id="psb-sekolah" required placeholder="Contoh: MTsN 1 Kediri">
+                        </div>
+                        <div class="form-group">
+                            <label>Alamat Lengkap (Desa, Kec, Kab) *</label>
+                            <input type="text" id="psb-alamat" required placeholder="Contoh: Semen, Kab. Kediri">
+                        </div>
+                        <div class="form-group">
+                            <label>Pilihan Program *</label>
+                            <select id="psb-program" required>
+                                <option value="">-- Pilih Jenjang / Mukim --</option>
+                                <option value="Mukim + MA Darun Najah">Mukim Pondok + MA Darun Najah</option>
+                                <option value="Mukim + Madrasah Diniyah">Mukim Pondok + Madrasah Diniyah</option>
+                                <option value="Non-Mukim (Formal Saja)">Non-Mukim (Sekolah Formal Saja)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Nama Orang Tua / Wali *</label>
+                            <input type="text" id="psb-wali" required placeholder="Nama Ayah / Ibu / Wali">
+                        </div>
+                        <div class="form-group">
+                            <label>No. WhatsApp Wali Aktif *</label>
+                            <input type="tel" id="psb-wa" required placeholder="Contoh: 081234567890">
+                        </div>
+
+                        <button type="submit" class="btn-utama-link" style="border:none; cursor:pointer;">Kirim ke Data Pondok & Konfirmasi WA</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
-  </body>
+</body>
 </html>

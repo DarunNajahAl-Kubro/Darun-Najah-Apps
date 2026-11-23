@@ -1,20 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --bg: #F6F8F7;
+  --bg: #E9EFEA;
   --surface: #FFFFFF;
-  --primary: #1B4332;
+  --soft: #F3F6F4;
+  --primary: #145335;
+  --primary-accent: #1B7247;
   --primary-soft: #E6F2EC;
   --text: #1B2420;
   --muted: #5C6862;
   --border: #E0E7E3;
 }
 
-/* Tema Mode Gelap */
+/* Tema Mode Gelap (Sinkron di Beranda & Semua Halaman Bacaan) */
 body.gelap {
-  --bg: #101613;
-  --surface: #18211D;
-  --primary: #2c8b5f;
+  --bg: #0A0E0C;
+  --surface: #141C18;
+  --soft: #1C2621;
+  --primary: #1B6B44;
+  --primary-accent: #2C8B5F;
   --primary-soft: #1F332A;
   --text: #EBF2EE;
   --muted: #98A69F;
@@ -35,176 +39,486 @@ body {
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* Header Beranda */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  max-width: 680px;
+#app-container {
+  max-width: 480px;
   margin: 0 auto;
-  padding: 20px 18px 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  background-color: var(--primary);
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-  border: 3px solid var(--border);
-}
-
-header #logo{
-  width: 58px;
-  height: 58px;
-  position: relative;
-  margin-bottom: -39px;
-}
-header h1 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--surface);
-  letter-spacing: -0.02em;
-  margin-left: 65px;
-  margin-top: -20px;
-  
-}
-
-header p {
-  font-size: 0.7rem;
-  color: var(--surface);
-  margin-left: 65px;
-}
-
-#TombolTema {
+  min-height: 100vh;
   background-color: var(--surface);
-  color: var(--text);
-  border: 1px solid var(--border);
-  padding: 4px 7px;
-  border-radius: 999px;
-  font-family: inherit;
-  font-size: 0.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
+  position: relative;
+  overflow-x: hidden;
+  box-shadow: 0 0 28px rgba(0, 0, 0, 0.08);
 }
 
-/* Kontainer Utama */
-main {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 6px 18px 40px;
-}
 .watermark {
   position: fixed;
   top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 360px;
-  max-width: 82vw;
-  opacity: 0.10;
+  width: 340px;
+  max-width: 80vw;
+  opacity: 0.06;
   z-index: 0;
   pointer-events: none !important;
 }
 
-/* Kolom Pencarian */
-#kolomCari {
+/* ==========================================
+   1. HEADER KUBAH MASJID (BERANDA)
+========================================== */
+.dome-header {
+  position: relative;
+  background: linear-gradient(165deg, #1b7247 0%, #11472d 100%);
+  min-height: 295px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.dome-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.14;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1.2'%3E%3Cpolygon points='30,4 37,23 56,30 37,37 30,56 23,37 4,30 23,23'/%3E%3Crect x='13' y='13' width='34' height='34'/%3E%3Ccircle cx='30' cy='30' r='8'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 56px 56px;
+  pointer-events: none;
+}
+
+.dome-svg {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
   width: 100%;
-  padding: 13px 16px;
-  border-radius: 12px;
-  border: 3px solid var(--border);
-  background-color: var(--surface);
+  height: 270px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.dome-info {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 58px 20px 10px 20px;
+}
+
+.brand-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.dome-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.brand-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--primary);
+  letter-spacing: -0.2px;
+}
+
+body.gelap .brand-title {
+  color: #34d399;
+}
+
+.lokasi-text {
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+
+.waktu-sholat-box h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.15;
+}
+
+.waktu-sholat-box h2 small {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.countdown-text {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.tanggal-text {
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+/* ==========================================
+   2. GRID 8 IKON MENU & KOLOM PENCARIAN BAWAH
+========================================== */
+.menu-grid-section {
+  position: relative;
+  z-index: 5;
+  padding: 14px 18px 18px 18px;
+  border-bottom: 8px solid var(--soft);
+}
+
+.menu-grid-8 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px 8px;
+  margin-bottom: 18px;
+}
+
+.icon-menu-item {
+  background: none;
+  border: none;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
   color: var(--text);
   font-family: inherit;
-  font-size: 0.95rem;
-  margin-bottom: 24px;
+}
+
+.icon-menu-item:active {
+  transform: scale(0.94);
+}
+
+.icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.bg-emerald { background: #e6f6ee; }
+.bg-teal    { background: #e0f5f3; }
+.bg-amber   { background: #fef3c7; }
+.bg-green   { background: #dcfce7; }
+.bg-rose    { background: #ffe4e6; }
+.bg-blue    { background: #e0f2fe; }
+.bg-indigo  { background: #e0e7ff; }
+.bg-slate   { background: #f1f5f9; }
+
+.icon-menu-item span {
+  font-size: 11.5px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 11px 14px;
+}
+
+.search-icon {
+  font-size: 14px;
+  opacity: 0.65;
+}
+
+#kolomCari {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
   outline: none;
 }
 
-#kolomCari:focus {
-  border-color: var(--primary);
+.hasil-cari-box {
+  margin-top: 12px;
 }
 
-/* Kategori & Daftar Slot Amalan */
-.kategori {
-  margin-bottom: 28px;
-}
-
-.kategori h2 {
-  font-size: 1.12rem;
-  font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 2px;
-}
-
-.kategori > p {
-  font-size: 0.85rem;
+#pesanKosong {
+  text-align: center;
   color: var(--muted);
+  font-size: 0.88rem;
+  padding: 20px 14px;
+  background-color: var(--soft);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+}
+
+/* ==========================================
+   3. ARTIKEL SEPUTAR PONDOK (PROFIL, GALERI, PSB)
+========================================== */
+.headline-section {
+  position: relative;
+  z-index: 5;
+  padding: 18px 18px 14px 18px;
+}
+
+.headline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 12px;
 }
 
-.kategori ul {
+.headline-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.accent-bar {
+  width: 4px;
+  height: 18px;
+  border-radius: 4px;
+  background-color: var(--primary-accent);
+}
+
+.headline-title h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.link-web-kecil {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary-accent);
+  text-decoration: none;
+}
+
+.headline-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.headline-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.headline-card:last-child {
+  border-bottom: none;
+}
+
+.headline-text {
+  flex: 1;
+}
+
+.tag-pill {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.tag-profil { background: #e6f4ed; color: #145335; }
+.tag-galeri { background: #e0f2fe; color: #0369a1; }
+.tag-daftar { background: #fef3c7; color: #b45309; }
+
+.headline-text h4 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.headline-thumb {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.thumb-logo {
+  background: var(--soft);
+  padding: 8px;
+  border: 1px solid var(--border);
+}
+
+.thumb-icon, .thumb-icon-green {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  background: var(--soft);
+  border: 1px solid var(--border);
+}
+
+.thumb-icon-green {
+  background: var(--primary-soft);
+}
+
+/* ==========================================
+   4. SUB-LAYAR, LIST FILE GITHUB, GALERI & PSB
+========================================== */
+.sub-screen {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  background-color: var(--surface);
+}
+
+.sub-content {
+  padding: 16px 18px 36px 18px;
+}
+
+.sub-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.btn-nav-plain {
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.link-list-card {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.kategori li a {
+.link-list-card li a {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  background-color: var(--surface);
+  background-color: var(--soft);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 14px 16px;
+  padding: 13px 15px;
   text-decoration: none;
   color: var(--text);
-  transition: border-color 0.2s ease, transform 0.15s ease;
 }
 
-.kategori li a:active {
-  transform: scale(0.99);
-}
-
-.kategori li a:hover {
+.link-list-card li a:hover {
   border-color: var(--primary);
 }
 
-.kategori li strong {
-  font-size: 0.98rem;
+.link-list-card li strong {
+  font-size: 0.94rem;
+}
+
+.link-list-card li span {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.clean-bullet {
+  padding-left: 18px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.galeri-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.galeri-placeholder {
+  aspect-ratio: 4 / 3;
+  background: var(--soft);
+  border: 1px dashed var(--border);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 26px;
+  text-align: center;
+  padding: 10px;
+}
+
+.galeri-placeholder span {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.form-psb {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-group label {
+  font-size: 12px;
   font-weight: 600;
 }
 
-.kategori li span {
-  font-size: 0.82rem;
-  color: var(--muted);
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--soft);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13.5px;
 }
-.kategori li p {
-  font-size: 0.80rem;
-  color: crimson;
-  position: relative;
-  width: 360px;
-  max-width: 82vw;
-}
-#pesanKosong {
+
+.btn-utama-link {
+  display: block;
+  width: 100%;
   text-align: center;
-  color: var(--muted);
-  font-size: 0.92rem;
-  padding: 32px 16px;
-  background-color: var(--surface);
-  border: 1px dashed var(--border);
+  padding: 13px;
   border-radius: 12px;
+  background-color: var(--primary);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13.5px;
+  text-decoration: none;
+  margin-top: 6px;
 }
 
 /* Footer */
 footer {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 20px 18px 36px;
+  position: relative;
+  z-index: 5;
+  padding: 20px 18px 32px;
   background-color: var(--primary);
   border-top: 1px solid var(--border);
   text-align: center;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--muted);
 }
 
@@ -215,11 +529,19 @@ footer p {
 
 footer a {
   color: var(--primary-soft);
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
 }
 
-/* === GAYA HALAMAN ISI BACAAN === */
+/* ==========================================
+   5. GAYA HALAMAN ISI BACAAN (TETAP UTUH UNTUK FOLDER bacaan/, quran/, dll)
+========================================== */
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 6px 18px 40px;
+}
+
 .nav-bacaan {
   position: sticky;
   top: 0;
@@ -299,6 +621,7 @@ footer a {
 
 .teks-arab {
   font-family: 'Amiri', serif;
+  font-weight: 700;
   direction: rtl;
   text-align: right;
   font-size: 1.75rem;
@@ -307,6 +630,7 @@ footer a {
 
 .teks-arab1 {
   font-family: 'Amiri', serif;
+  font-weight: 700;
   direction: rtl;
   text-align: left;
   font-size: 1.75rem;
