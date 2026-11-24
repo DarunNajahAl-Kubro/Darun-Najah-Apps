@@ -27,17 +27,17 @@ if (tombolTema) {
 }
 
 // ==========================================
-// 2. NAVIGASI SUB-LAYAR DI BERANDA
+// 2. NAVIGASI SUB-LAYAR DI BERANDA (SUPPORT TOMBOL BACK HP)
 // ==========================================
-function bukaLayar(idLayar) {
-  const daftarLayar = [
-    "home-screen",
-    "submenu-screen",
-    "profil-screen",
-    "galeri-screen",
-    "pendaftaran-screen"
-  ];
+const daftarLayar = [
+  "home-screen",
+  "submenu-screen",
+  "profil-screen",
+  "galeri-screen",
+  "pendaftaran-screen"
+];
 
+function tampilkanLayar(idLayar) {
   daftarLayar.forEach((id) => {
     const el = document.getElementById(id);
     if (el) el.style.display = "none";
@@ -49,6 +49,40 @@ function bukaLayar(idLayar) {
     window.scrollTo(0, 0);
   }
 }
+
+function bukaLayar(idLayar) {
+  if (idLayar === "home-screen") {
+    // Jika sedang di sub-layar, mundurkan riwayat browser agar sinkron dengan tombol Back HP
+    if (history.state && history.state.layar) {
+      history.back();
+    } else {
+      tampilkanLayar("home-screen");
+    }
+    return;
+  }
+
+  tampilkanLayar(idLayar);
+  // Simpan status layar ke riwayat browser HP
+  history.pushState({ layar: idLayar }, "", `#${idLayar}`);
+}
+
+// Tangkap tombol Back / gestur kembali bawaan HP
+window.addEventListener("popstate", (event) => {
+  const layarTujuan = event.state && event.state.layar ? event.state.layar : "home-screen";
+  tampilkanLayar(layarTujuan);
+});
+
+// Bersihkan hash sisa saat halaman pertama kali dimuat ulang
+window.addEventListener("DOMContentLoaded", () => {
+  const hashAwal = window.location.hash.replace("#", "");
+  if (["profil-screen", "galeri-screen", "pendaftaran-screen"].includes(hashAwal)) {
+    tampilkanLayar(hashAwal);
+  } else if (hashAwal) {
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+    tampilkanLayar("home-screen");
+  }
+});
+
 
 // ==========================================
 // 3. KATALOG FILE HTML SESUAI FOLDER GITHUB
